@@ -1,19 +1,19 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import { useTelegram } from './hooks/useTelegram';
 
 
 function App() {
 
-  const {onToggleButton, tg} = useTelegram();
+  const { tg, onToggleButton } = useTelegram();
 
   useEffect( () => {
-      tg.ready();
-  }, [])
+      tg?.ready();
+  }, [tg]);
 
   return (
     <div className="App">
-        <button onClick={onToggleButton}>Toggle</button>
+        <button onClick={onToggleButton}>toggle</button>
     </div>
   );
 }
