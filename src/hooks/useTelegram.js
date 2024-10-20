@@ -14,7 +14,7 @@ export function useTelegram(){
         }
     }
 
-    return{
+    return{ 
         onClose,
         onToggleButton,
         tg,
