@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import '../Form/Form.css';
 import { useTelegram } from '../../hooks/useTelegram';
+import { data } from '@remix-run/router';
 
 const Form = () => {
 
@@ -18,14 +19,14 @@ const Form = () => {
             subject
         }
         tg.sendData(JSON.stringify(data));
-    },[])
+    },[tg, data])
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
         return () => {
             tg.offEvent('mainButtonClicked', onSendData)
         }
-    }, [])
+    }, [tg])
 
     useEffect(() => {
         tg.MainButton.setParams({
