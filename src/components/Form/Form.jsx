@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import '../Form/Form.css';
 import { useTelegram } from '../../hooks/useTelegram';
-import { data } from '@remix-run/router';
 
 const Form = () => {
 
